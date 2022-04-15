@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace StudentsSystem.Data.Models
+namespace StudentsManagmentSystem.Data.Models
 {
     public static class DataValidation
     {

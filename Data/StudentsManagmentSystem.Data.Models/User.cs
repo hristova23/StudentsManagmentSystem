@@ -1,4 +1,4 @@
-﻿namespace StudentsSystem.Data.Models
+﻿namespace StudentsManagmentSystem.Data.Models
 {
     using System.ComponentModel.DataAnnotations;
 
