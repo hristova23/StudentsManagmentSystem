@@ -3,13 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32228.343
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentsManagmentSystem", "StudentsManagmentSystem.csproj", "{63965931-C593-4D94-BE96-63CD89543728}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentsManagmentSystem", "StudentsManagmentSystem.csproj", "{63965931-C593-4D94-BE96-63CD89543728}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{F738A12A-CB4C-45C4-AC23-CDC72027429C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentsManagmentSystem.Data", "..\Data\StudentsManagmentSystem.Data\StudentsManagmentSystem.Data.csproj", "{D8086264-7C7C-46E3-91C4-50BA13DED455}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentsManagmentSystem.Data", "..\Data\StudentsManagmentSystem.Data\StudentsManagmentSystem.Data.csproj", "{D8086264-7C7C-46E3-91C4-50BA13DED455}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentsManagmentSystem.Data.Models", "..\Data\StudentsManagmentSystem.Data.Models\StudentsManagmentSystem.Data.Models.csproj", "{8DDCCAF4-98A8-407E-8669-F0340C85C6EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentsManagmentSystem.Data.Models", "..\Data\StudentsManagmentSystem.Data.Models\StudentsManagmentSystem.Data.Models.csproj", "{8DDCCAF4-98A8-407E-8669-F0340C85C6EB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{45EB8EF5-57C7-41AD-B0E9-14F71E6CBA68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentsManagmentSystem.Forms", "..\Presentation\StudentsManagmentSystem.Forms\StudentsManagmentSystem.Forms.csproj", "{36329415-108F-4CA1-AF0E-499318BF7E6F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +33,10 @@ Global
 		{8DDCCAF4-98A8-407E-8669-F0340C85C6EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8DDCCAF4-98A8-407E-8669-F0340C85C6EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8DDCCAF4-98A8-407E-8669-F0340C85C6EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36329415-108F-4CA1-AF0E-499318BF7E6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36329415-108F-4CA1-AF0E-499318BF7E6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36329415-108F-4CA1-AF0E-499318BF7E6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36329415-108F-4CA1-AF0E-499318BF7E6F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -36,6 +44,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{D8086264-7C7C-46E3-91C4-50BA13DED455} = {F738A12A-CB4C-45C4-AC23-CDC72027429C}
 		{8DDCCAF4-98A8-407E-8669-F0340C85C6EB} = {F738A12A-CB4C-45C4-AC23-CDC72027429C}
+		{36329415-108F-4CA1-AF0E-499318BF7E6F} = {45EB8EF5-57C7-41AD-B0E9-14F71E6CBA68}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A0EB28C6-4CF8-47E2-886A-4417CF63A072}
