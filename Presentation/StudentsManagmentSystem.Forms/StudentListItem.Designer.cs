@@ -53,6 +53,7 @@ namespace StudentsManagmentSystem.Forms
             this.DetailsBtn.TabIndex = 12;
             this.DetailsBtn.Text = "Details";
             this.DetailsBtn.UseVisualStyleBackColor = false;
+            this.DetailsBtn.Click += new System.EventHandler(this.DetailsBtn_Click);
             // 
             // ClassNoLbl
             // 

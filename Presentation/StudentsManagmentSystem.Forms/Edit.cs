@@ -8,16 +8,11 @@ using System.Windows.Forms;
 
 namespace StudentsManagmentSystem.Forms
 {
-    public partial class StudentListItem : UserControl
+    public partial class Edit : Form
     {
-        public StudentListItem()
+        public Edit()
         {
             InitializeComponent();
-        }
-
-        private void DetailsBtn_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
