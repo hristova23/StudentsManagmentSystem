@@ -8,16 +8,11 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Data\StudentsManagmentSystem.Data\StudentsManagmentSystem.Data.csproj" />
+    <ProjectReference Include="..\..\Services\StudentsManagmentSystem.Services.Models\StudentsManagmentSystem.Services.Models.csproj" />
     <ProjectReference Include="..\..\Services\StudentsManagmentSystem.Services\StudentsManagmentSystem.Services.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Details.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="AddStudent - Copy.Designer.cs">
-      <DependentUpon>AddStudent.Designer.cs</DependentUpon>
-    </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -26,9 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="AddStudent - Copy.resx">
-      <DependentUpon>AddStudent.resx</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Update="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

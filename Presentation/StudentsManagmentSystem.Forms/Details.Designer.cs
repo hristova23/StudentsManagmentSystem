@@ -1,7 +1,7 @@
 ﻿
 namespace StudentsManagmentSystem.Forms
 {
-    partial class AddStudent
+    partial class Details
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,6 @@ namespace StudentsManagmentSystem.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.AddBtn = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -40,6 +39,7 @@ namespace StudentsManagmentSystem.Forms
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.firstNameTxtBox = new System.Windows.Forms.TextBox();
+            this.EditBtn = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -49,23 +49,6 @@ namespace StudentsManagmentSystem.Forms
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // AddBtn
-            // 
-            this.AddBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.AddBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(49)))), ((int)(((byte)(117)))));
-            this.AddBtn.FlatAppearance.BorderSize = 0;
-            this.AddBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddBtn.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.AddBtn.ForeColor = System.Drawing.Color.White;
-            this.AddBtn.Location = new System.Drawing.Point(12, 318);
-            this.AddBtn.Name = "AddBtn";
-            this.AddBtn.Size = new System.Drawing.Size(440, 37);
-            this.AddBtn.TabIndex = 62;
-            this.AddBtn.Text = "Add";
-            this.AddBtn.UseVisualStyleBackColor = false;
             // 
             // label7
             // 
@@ -197,6 +180,23 @@ namespace StudentsManagmentSystem.Forms
             this.firstNameTxtBox.Size = new System.Drawing.Size(230, 22);
             this.firstNameTxtBox.TabIndex = 52;
             // 
+            // EditBtn
+            // 
+            this.EditBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.EditBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(49)))), ((int)(((byte)(117)))));
+            this.EditBtn.FlatAppearance.BorderSize = 0;
+            this.EditBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EditBtn.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.EditBtn.ForeColor = System.Drawing.Color.White;
+            this.EditBtn.Location = new System.Drawing.Point(12, 318);
+            this.EditBtn.Name = "EditBtn";
+            this.EditBtn.Size = new System.Drawing.Size(440, 37);
+            this.EditBtn.TabIndex = 51;
+            this.EditBtn.Text = "Edit";
+            this.EditBtn.UseVisualStyleBackColor = false;
+            // 
             // label10
             // 
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -309,13 +309,12 @@ namespace StudentsManagmentSystem.Forms
             this.label1.TabIndex = 43;
             this.label1.Text = "First Name";
             // 
-            // AddStudent
+            // Details
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(464, 371);
-            this.Controls.Add(this.AddBtn);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.label5);
@@ -326,6 +325,7 @@ namespace StudentsManagmentSystem.Forms
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.firstNameTxtBox);
+            this.Controls.Add(this.EditBtn);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -335,8 +335,8 @@ namespace StudentsManagmentSystem.Forms
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "AddStudent";
-            this.Text = "AddStudent";
+            this.Name = "Details";
+            this.Text = "Details";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -344,7 +344,6 @@ namespace StudentsManagmentSystem.Forms
 
         #endregion
 
-        private System.Windows.Forms.Button AddBtn;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label5;
@@ -355,6 +354,7 @@ namespace StudentsManagmentSystem.Forms
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox firstNameTxtBox;
+        private System.Windows.Forms.Button EditBtn;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
