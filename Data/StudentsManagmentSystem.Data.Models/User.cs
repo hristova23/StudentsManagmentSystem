@@ -2,7 +2,7 @@
 {
     using System.ComponentModel.DataAnnotations;
 
-    using static DataValidation;
+    using static DataValidations;
 
     public class User
     {

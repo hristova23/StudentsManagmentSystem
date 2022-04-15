@@ -6,4 +6,9 @@
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Data\StudentsManagmentSystem.Data\StudentsManagmentSystem.Data.csproj" />
+    <ProjectReference Include="..\..\Services\StudentsManagmentSystem.Services\StudentsManagmentSystem.Services.csproj" />
+  </ItemGroup>
+
 </Project>

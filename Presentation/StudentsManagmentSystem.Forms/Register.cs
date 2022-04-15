@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
-
-namespace StudentsManagmentSystem.Forms
+﻿namespace StudentsManagmentSystem.Forms
 {
+    using System;
+    using System.Windows.Forms;
+
+    using Data;
+    using Services.Implementations;
+
     public partial class Register : Form
     {
         public Register()
@@ -34,7 +32,21 @@ namespace StudentsManagmentSystem.Forms
 
         private void RegisterBtn_Click(object sender, EventArgs e)
         {
+            using var data = new StudentsManagmentSystemDbContext();
+            var userService = new UserService(data);
 
+            string username = UsernameTxtBox.Text;
+            string password = PasswordTxtBox.Text;
+
+            try
+            {
+                userService.Create(username, password);
+                BackToLoginLbl_Click(sender, e);
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
         }
 
         private void BackToLoginLbl_Click(object sender, EventArgs e)

@@ -5,7 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Implementations\" />
+    <ProjectReference Include="..\..\Data\StudentsManagmentSystem.Data.Models\StudentsManagmentSystem.Data.Models.csproj" />
+    <ProjectReference Include="..\..\Data\StudentsManagmentSystem.Data\StudentsManagmentSystem.Data.csproj" />
+    <ProjectReference Include="..\StudentsManagmentSystem.Services.Models\StudentsManagmentSystem.Services.Models.csproj" />
   </ItemGroup>
 
 </Project>
