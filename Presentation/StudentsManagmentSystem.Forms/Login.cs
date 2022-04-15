@@ -6,6 +6,7 @@
 
     using Data;
     using Services.Implementations;
+    using Services.Models;
 
     public partial class Login : Form
     {
@@ -47,14 +48,14 @@
             string username = UsernameTxtBox.Text;
             string password = userService.HashPassword(PasswordTxtBox.Text);
 
-            var user = userService.SearchByUsername(username);
+            UserListingServiceModel user = userService.SearchByUsername(username);
 
             if (user != null &&
                 user.Password == password)
             {
                 //is authorized
                 this.Hide();
-                Main homeForm = new Main();
+                Main homeForm = new Main(user);
                 homeForm.ShowDialog();
                 this.Close();
             }
