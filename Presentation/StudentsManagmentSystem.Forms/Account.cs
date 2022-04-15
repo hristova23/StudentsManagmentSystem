@@ -19,7 +19,7 @@
 
         private void CancelBtn_Click(object sender, System.EventArgs e)
         {
-            foreach (TextBox txtBox in this.Controls.OfType<TextBox>())
+            foreach (TextBox txtBox in this.changePassGroupBox.Controls.OfType<TextBox>())
             {
                 txtBox.Clear();
             }
@@ -27,6 +27,22 @@
 
         private void SaveChangesBtn_Click(object sender, System.EventArgs e)
         {
+            using var data = new StudentsManagmentSystemDbContext();
+            var userService = new UserService(data);
+
+            string oldPassword = oldPassTxtBox.Text;
+            string newPassword = newPassTxtBox.Text;
+            string confirmPassword = confirmPassTxtBox.Text;
+
+            try
+            {
+                userService.UpdatePassword(this.user,oldPassword,newPassword,confirmPassword);
+                CancelBtn_Click(sender, e);
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
         }
     }
 }

@@ -45,6 +45,37 @@
             this.data.SaveChanges();
         }
 
+        public void UpdatePassword(UserListingServiceModel user, string oldPassword, string newPassword, string confirmPassword)
+        {
+            if (oldPassword == "" || newPassword == "" || confirmPassword == "")
+            {
+                throw new InvalidOperationException("Please, fill all fields");
+            }
+            if (user.Password != HashPassword(oldPassword))
+            {
+                throw new InvalidOperationException("Invalid old password");
+            }
+            if (newPassword != confirmPassword)
+            {
+                throw new InvalidOperationException("Passwords must match");
+            }
+            if (newPassword.Length > DataValidations.PasswordMaxLength
+                || newPassword.Length < DataValidations.PasswordMinLength)
+            {
+                throw new InvalidOperationException($"Passwords must be between {DataValidations.PasswordMinLength} and {DataValidations.PasswordMaxLength} characters long");
+            }
+            if (oldPassword == newPassword)
+            {
+                throw new InvalidOperationException("New password cannot be the same as old password");
+            }
+
+            var currUser = data.Users.Where(b => b.Username == user.Username).FirstOrDefault();
+
+            currUser.Password = HashPassword(newPassword);
+
+            this.data.SaveChanges();
+        }
+
         public string HashPassword(string password)
         {
             using var sha = SHA256.Create();
