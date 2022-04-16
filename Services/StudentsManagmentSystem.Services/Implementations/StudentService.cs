@@ -94,7 +94,7 @@
             this.data.SaveChanges();
         }
 
-        public void Update(int id,
+        public void Update(string EGN,
             string firstName,
             string middleName,
             string lastName,
@@ -140,7 +140,7 @@
                     break;
             }
 
-            Student currStudent = data.Students.Where(s => s.Id == id).FirstOrDefault();
+            var currStudent = data.Students.Where(s => s.EGN == EGN).FirstOrDefault();
             if (currStudent == null)
             {
                 throw new InvalidProgramException("Cannot alocate this user");
@@ -158,11 +158,11 @@
             this.data.SaveChanges();
         }
 
-        public void Delete(int id)
+        public void Delete(string egn)
         {
             this.data.Students
                 .Remove(this.data.Students
-                .Where(s => s.Id == id)
+                .Where(s => s.EGN == egn)
                 .FirstOrDefault());
 
             data.SaveChanges();

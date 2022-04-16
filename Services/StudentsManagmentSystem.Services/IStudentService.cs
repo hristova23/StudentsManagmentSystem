@@ -19,8 +19,16 @@
             string studentStatus,
             DateTime LastChangeDate);
 
-        //void Update(string username, string password);
-        void Delete(int Id);
+        void Update(string EGN,
+            string firstName,
+            string middleName,
+            string lastName,
+            int grade,
+            int numberInClass,
+            DateTime enrollmentDate,
+            string studentStatus);
+
+        void Delete(string egn);
         List<StudentListingServiceModel> SearchByName(string name);
     }
 }

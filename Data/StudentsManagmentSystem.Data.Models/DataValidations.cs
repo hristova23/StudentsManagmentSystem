@@ -2,7 +2,7 @@
 {
     public static class DataValidations
     {
-        public const int NameMaxLength = 20;
+        public const int NameMaxLength = 8;
         public const int UsernameMaxLength = 30;
         public const int PasswordMinLength = 3;
         public const int PasswordMaxLength = 20;

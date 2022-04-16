@@ -42,7 +42,7 @@
             childForm.Show();
         }
 
-        private void RemoveBtn_Click(object sender, System.EventArgs e)
+        private void RemoveBtn_Click(object sender, EventArgs e)
         {
             try
             {
@@ -52,7 +52,7 @@
                     using var data = new StudentsManagmentSystemDbContext();
                     StudentService studentService = new StudentService(data);
 
-                    studentService.Delete(this.student.Id);
+                    studentService.Delete(this.student.EGN);
 
                     var childForm = new Search();
                     childForm.TopLevel = false;

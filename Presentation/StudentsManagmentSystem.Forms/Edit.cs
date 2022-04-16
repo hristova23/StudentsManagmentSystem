@@ -38,7 +38,7 @@
                 using var data = new StudentsManagmentSystemDbContext();
                 var studentService = new StudentService(data);
 
-                studentService.Update(this.student.Id,
+                studentService.Update(idCardNumber,
                     firstName,
                     middleName,
                     lastName,
