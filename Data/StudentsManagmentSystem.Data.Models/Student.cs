@@ -10,7 +10,7 @@
         public int Id { get; set; }// id 
 
         [Required]
-        [MaxLength(EGNMaxLength)]
+        [MaxLength(EGNLength)]
         public string EGN { get; set; }// ЕГН
 
         [Required]
@@ -26,14 +26,14 @@
         public string LastName { get; set; }// фамилия
 
         [Required]
-        public Grade Grade { get; set; }// клас
+        public int Grade { get; set; }// клас
 
         [Required]
         [Range(1, LastNumberInClass)]
         public int NumberInClass { get; set; }// номер в клас //new
 
         [Required]
-        [MaxLength(YearMaxLength)]
+        [MaxLength(YearLength)]
         public string Year { get; set; }// учебна година //new
 
         [Required]

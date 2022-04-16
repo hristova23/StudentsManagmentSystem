@@ -12,15 +12,15 @@
             string firstName,
             string middleName,
             string lastName, 
-            Grade grade, 
+            int grade, 
             int numberInClass,
             string Year, 
             DateTime enrollmentDate,
-            StudentStatus studentStatus,
+            string studentStatus,
             DateTime LastChangeDate);
 
         //void Update(string username, string password);
         void Delete(int Id);
-        IList<StudentListingServiceModel> SearchByName(string name);
+        List<StudentListingServiceModel> SearchByName(string name);
     }
 }

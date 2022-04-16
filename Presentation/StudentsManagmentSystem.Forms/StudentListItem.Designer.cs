@@ -41,13 +41,13 @@ namespace StudentsManagmentSystem.Forms
             // 
             // DetailsBtn
             // 
+            this.DetailsBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.DetailsBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(49)))), ((int)(((byte)(117)))));
-            this.DetailsBtn.Dock = System.Windows.Forms.DockStyle.Right;
             this.DetailsBtn.FlatAppearance.BorderSize = 0;
             this.DetailsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DetailsBtn.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.DetailsBtn.ForeColor = System.Drawing.Color.White;
-            this.DetailsBtn.Location = new System.Drawing.Point(340, 3);
+            this.DetailsBtn.Location = new System.Drawing.Point(330, 3);
             this.DetailsBtn.Name = "DetailsBtn";
             this.DetailsBtn.Size = new System.Drawing.Size(75, 21);
             this.DetailsBtn.TabIndex = 12;
@@ -60,7 +60,7 @@ namespace StudentsManagmentSystem.Forms
             this.ClassNoLbl.AutoSize = true;
             this.ClassNoLbl.Dock = System.Windows.Forms.DockStyle.Left;
             this.ClassNoLbl.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ClassNoLbl.Location = new System.Drawing.Point(292, 3);
+            this.ClassNoLbl.Location = new System.Drawing.Point(282, 3);
             this.ClassNoLbl.Margin = new System.Windows.Forms.Padding(3);
             this.ClassNoLbl.Name = "ClassNoLbl";
             this.ClassNoLbl.Size = new System.Drawing.Size(42, 21);
@@ -75,9 +75,9 @@ namespace StudentsManagmentSystem.Forms
             this.ClassLbl.Location = new System.Drawing.Point(248, 3);
             this.ClassLbl.Margin = new System.Windows.Forms.Padding(3);
             this.ClassLbl.Name = "ClassLbl";
-            this.ClassLbl.Size = new System.Drawing.Size(38, 21);
+            this.ClassLbl.Size = new System.Drawing.Size(28, 21);
             this.ClassLbl.TabIndex = 10;
-            this.ClassLbl.Text = "11b";
+            this.ClassLbl.Text = "11";
             // 
             // LastNameLbl
             // 
@@ -122,6 +122,7 @@ namespace StudentsManagmentSystem.Forms
             this.flowLayoutPanel1.Controls.Add(this.DetailsBtn);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.MinimumSize = new System.Drawing.Size(419, 31);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(419, 31);
             this.flowLayoutPanel1.TabIndex = 0;

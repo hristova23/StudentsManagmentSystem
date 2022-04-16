@@ -10,7 +10,7 @@
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
         public string LastName { get; set; }
-        public Grade Grade { get; set; }
+        public int Grade { get; set; }
         public int NumberInClass { get; set; }
         public string Year { get; set; }
         public DateTime EnrollmentDate { get; set; }

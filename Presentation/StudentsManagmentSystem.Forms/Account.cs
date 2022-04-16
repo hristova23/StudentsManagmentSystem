@@ -44,5 +44,10 @@
                 MessageBox.Show(err.Message);
             }
         }
+
+        private void Account_Load(object sender, EventArgs e)
+        {
+            UsernameLbl.Text = $"{this.user.Username}";
+        }
     }
 }

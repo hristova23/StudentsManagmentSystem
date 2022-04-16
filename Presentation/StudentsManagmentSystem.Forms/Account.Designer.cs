@@ -38,7 +38,7 @@ namespace StudentsManagmentSystem.Forms
             this.label6 = new System.Windows.Forms.Label();
             this.oldPassTxtBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.UsernameLbl = new System.Windows.Forms.Label();
             this.changePassGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -154,16 +154,15 @@ namespace StudentsManagmentSystem.Forms
             this.label5.TabIndex = 14;
             this.label5.Text = "Old Password";
             // 
-            // label1
+            // UsernameLbl
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Yu Gothic UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(49)))), ((int)(((byte)(117)))));
-            this.label1.Location = new System.Drawing.Point(10, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 37);
-            this.label1.TabIndex = 40;
-            this.label1.Text = "FullName";
+            this.UsernameLbl.AutoSize = true;
+            this.UsernameLbl.Font = new System.Drawing.Font("Yu Gothic UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.UsernameLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(49)))), ((int)(((byte)(117)))));
+            this.UsernameLbl.Location = new System.Drawing.Point(10, 18);
+            this.UsernameLbl.Name = "UsernameLbl";
+            this.UsernameLbl.Size = new System.Drawing.Size(0, 37);
+            this.UsernameLbl.TabIndex = 40;
             // 
             // Account
             // 
@@ -171,11 +170,12 @@ namespace StudentsManagmentSystem.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(464, 371);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.UsernameLbl);
             this.Controls.Add(this.changePassGroupBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Account";
             this.Text = "Account";
+            this.Load += new System.EventHandler(this.Account_Load);
             this.changePassGroupBox.ResumeLayout(false);
             this.changePassGroupBox.PerformLayout();
             this.ResumeLayout(false);
@@ -193,7 +193,7 @@ namespace StudentsManagmentSystem.Forms
         private System.Windows.Forms.TextBox oldPassTxtBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button SaveChangesBtn;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label UsernameLbl;
         private System.Windows.Forms.Button CancelBtn;
     }
 }

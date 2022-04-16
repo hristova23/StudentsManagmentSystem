@@ -21,19 +21,19 @@
             string firstName,
             string middleName,
             string lastName,
-            Grade grade, 
+            int grade,
             int numberInClass,
             string Year,
             DateTime enrollmentDate,
-            StudentStatus studentStatus,
+            string studentStatus,
             DateTime LastChangeDate)
         {
-            if (EGN == "" 
-                || firstName== ""
-                || middleName== ""
-                || lastName== ""
-                || grade == ""
-                || numberInClass == null
+            if (EGN == ""
+                || firstName == ""
+                || middleName == ""
+                || lastName == ""
+                || grade == 0
+                || numberInClass == 0
                 || Year == ""
                 || enrollmentDate == null
                 || studentStatus == ""
@@ -41,15 +41,39 @@
             {
                 throw new InvalidOperationException("Please, fill all fields");
             }
+            if (firstName.Length > DataValidations.NameMaxLength
+                || middleName.Length > DataValidations.NameMaxLength
+                || lastName.Length > DataValidations.NameMaxLength)
+            {
+                throw new InvalidOperationException($"Name cannot be more than {DataValidations.NameMaxLength} characters long");
+            }
+            if (EGN.Length != DataValidations.EGNLength)
+            {
+                throw new InvalidOperationException($"ID Card Number must be exactly {DataValidations.EGNLength} characters long");
+            }
             if (this.data.Students.Any(u => u.EGN == EGN))
             {
                 throw new InvalidOperationException($"This ID is already in use");
             }
-            if (username.Length > DataValidations.NameMaxLength
-                || password.Length > DataValidations.PasswordMaxLength
-                || password.Length < DataValidations.PasswordMinLength)
+
+            StudentStatus status = StudentStatus.Studying;
+            switch (studentStatus)
             {
-                throw new InvalidOperationException($"Password must be between {DataValidations.PasswordMinLength} and {DataValidations.PasswordMaxLength} characters long");
+                case "Studying":
+                    status = StudentStatus.Studying;
+                    break;
+                case "Transferred":
+                    status = StudentStatus.Transferred;
+                    break;
+                case "Graduated":
+                    status = StudentStatus.Graduated;
+                    break;
+                case "Expelled":
+                    status = StudentStatus.Expelled;
+                    break;
+                default:
+                    status = StudentStatus.Studying;
+                    break;
             }
 
             Student student = new Student
@@ -62,7 +86,7 @@
                 NumberInClass = numberInClass,
                 Year = Year,
                 EnrollmentDate = enrollmentDate,
-                StudentStatus = studentStatus,
+                StudentStatus = status,
                 LastChangeDate = LastChangeDate
             };
             this.data.Students.Add(student);
@@ -70,14 +94,106 @@
             this.data.SaveChanges();
         }
 
-        public void Delete(int Id)
+        public void Update(int id,
+            string firstName,
+            string middleName,
+            string lastName,
+            int grade,
+            int numberInClass,
+            DateTime enrollmentDate,
+            string studentStatus)
         {
-            throw new NotImplementedException();
+            if (firstName == ""
+                || middleName == ""
+                || lastName == ""
+                || grade == 0
+                || numberInClass == 0
+                || enrollmentDate == null
+                || studentStatus == "")
+            {
+                throw new InvalidOperationException("Please, fill all fields");
+            }
+            if (firstName.Length > DataValidations.NameMaxLength
+                || middleName.Length > DataValidations.NameMaxLength
+                || lastName.Length > DataValidations.NameMaxLength)
+            {
+                throw new InvalidOperationException($"Name cannot be more than {DataValidations.NameMaxLength} characters long");
+            }
+
+            StudentStatus status = StudentStatus.Studying;
+            switch (studentStatus)
+            {
+                case "Studying":
+                    status = StudentStatus.Studying;
+                    break;
+                case "Transferred":
+                    status = StudentStatus.Transferred;
+                    break;
+                case "Graduated":
+                    status = StudentStatus.Graduated;
+                    break;
+                case "Expelled":
+                    status = StudentStatus.Expelled;
+                    break;
+                default:
+                    status = StudentStatus.Studying;
+                    break;
+            }
+
+            Student currStudent = data.Students.Where(s => s.Id == id).FirstOrDefault();
+            if (currStudent == null)
+            {
+                throw new InvalidProgramException("Cannot alocate this user");
+            }
+
+            currStudent.FirstName = firstName;
+            currStudent.MiddleName= middleName;
+            currStudent.LastName = lastName;
+            currStudent.Grade = grade;
+            currStudent.NumberInClass = numberInClass;
+            currStudent.EnrollmentDate = enrollmentDate;
+            currStudent.StudentStatus = status;
+            currStudent.LastChangeDate = DateTime.UtcNow;
+
+            this.data.SaveChanges();
         }
 
-        public IList<StudentListingServiceModel> SearchByName(string name)
+        public void Delete(int id)
         {
-            throw new NotImplementedException();
+            this.data.Students
+                .Remove(this.data.Students
+                .Where(s => s.Id == id)
+                .FirstOrDefault());
+
+            data.SaveChanges();
+        }
+
+        public List<StudentListingServiceModel> SearchByName(string name)
+        {
+            if (this.data.Students.Any(s => s.FirstName.ToLower().Contains(name.ToLower())) 
+                || this.data.Students.Any(s => s.MiddleName.ToLower().Contains(name.ToLower()))
+                || this.data.Students.Any(s => s.LastName.ToLower().Contains(name.ToLower())))
+            {
+                return this.data.Students
+                    .Where(s => s.FirstName.ToLower().Contains(name.ToLower())
+                    || s.MiddleName.ToLower().Contains(name.ToLower())
+                    || s.LastName.ToLower().Contains(name.ToLower()))
+                    .Select(u => new StudentListingServiceModel()
+                    {
+                        FirstName = u.FirstName,
+                        MiddleName = u.MiddleName,
+                        LastName = u.LastName,
+                        EGN = u.EGN,
+                        Grade = u.Grade,
+                        NumberInClass = u.NumberInClass,
+                        EnrollmentDate = u.EnrollmentDate,
+                        Year = u.Year,
+                        StudentStatus = u.StudentStatus,
+                        LastChangeDate = u.LastChangeDate
+                    })
+                    .ToList();
+            }
+            return null;
         }
     }
 }

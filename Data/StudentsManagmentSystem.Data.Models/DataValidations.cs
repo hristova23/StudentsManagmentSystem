@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace StudentsManagmentSystem.Data.Models
+﻿namespace StudentsManagmentSystem.Data.Models
 {
     public static class DataValidations
     {
@@ -10,8 +6,8 @@ namespace StudentsManagmentSystem.Data.Models
         public const int UsernameMaxLength = 30;
         public const int PasswordMinLength = 3;
         public const int PasswordMaxLength = 20;
-        public const int EGNMaxLength = 10;
+        public const int EGNLength = 10;
         public const int LastNumberInClass = 10;
-        public const int YearMaxLength = 4;
+        public const int YearLength = 9;
     }
 }
